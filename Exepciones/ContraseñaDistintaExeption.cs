@@ -8,7 +8,7 @@ namespace Exepciones
 {
     public class ContraseñaDistintaExeption :Exception
     {
-        public ContraseñaDistintaExeption() : base()
+        public ContraseñaDistintaExeption() : base("Error. las contraseñas no son iguales")
         {
 
         }
