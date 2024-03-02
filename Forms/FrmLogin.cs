@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Exepciones;
+﻿using Exepciones;
 using Newtonsoft.Json;
 using Objetos;
 
@@ -30,23 +21,24 @@ namespace Forms
             }
             catch (IngresoIncorrectoExeption ex)
             {
-                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               LblErrorContraseña.Text = ex.Message;
             }
             catch (CuentaExistenteExeption ex)
             {
-                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorCuenta.Text = ex.Message;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LblErrorNombre.Text = ex.Message;
             }
         }
 
         private void LlblRegistar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmRegistrate frm = new FrmRegistrate();
-            frm.ShowDialog();
-           
+            frm.Show();
+            this.Hide();
+
         }
         public bool Verificar()
         {
@@ -79,7 +71,6 @@ namespace Forms
         {
             List<Usuario> usuarios = null;
             string jsonText = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\usuarios.json");
-            
             usuarios = JsonConvert.DeserializeObject<List<Usuario>>(jsonText);
             return usuarios;
         }

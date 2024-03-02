@@ -16,7 +16,7 @@ namespace Forms
             {
                 if (this.Verificar())
                 {
-
+                    // form principal
                 }
             }
             catch (CuentaExistenteExeption)
@@ -35,7 +35,20 @@ namespace Forms
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            // crear captcha
+            FrmCaptcha frm = new FrmCaptcha();
+            frm.Show();
+            this.Hide();
+            try
+            {
+                if (frm.verificar())
+                {
+                    CbCaptcha.Checked = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                CbCaptcha.Checked = false;
+            }
         }
         public bool Verificar()
         {

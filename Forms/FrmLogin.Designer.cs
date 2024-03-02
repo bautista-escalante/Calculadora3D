@@ -36,6 +36,9 @@
             label3 = new Label();
             LlblRegistar = new LinkLabel();
             label4 = new Label();
+            lblErrorCuenta = new Label();
+            LblErrorNombre = new Label();
+            LblErrorContraseña = new Label();
             SuspendLayout();
             // 
             // btningresar
@@ -121,12 +124,48 @@
             label4.TabIndex = 9;
             label4.Text = "no tenes una cuenta?";
             // 
+            // lblErrorCuenta
+            // 
+            lblErrorCuenta.AutoSize = true;
+            lblErrorCuenta.BackColor = Color.FromArgb(0, 0, 64);
+            lblErrorCuenta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblErrorCuenta.ForeColor = Color.Red;
+            lblErrorCuenta.Location = new Point(80, 294);
+            lblErrorCuenta.Name = "lblErrorCuenta";
+            lblErrorCuenta.Size = new Size(0, 20);
+            lblErrorCuenta.TabIndex = 10;
+            // 
+            // LblErrorNombre
+            // 
+            LblErrorNombre.AutoSize = true;
+            LblErrorNombre.BackColor = Color.FromArgb(0, 0, 64);
+            LblErrorNombre.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblErrorNombre.ForeColor = Color.Red;
+            LblErrorNombre.Location = new Point(185, 58);
+            LblErrorNombre.Name = "LblErrorNombre";
+            LblErrorNombre.Size = new Size(0, 20);
+            LblErrorNombre.TabIndex = 11;
+            // 
+            // LblErrorContraseña
+            // 
+            LblErrorContraseña.AutoSize = true;
+            LblErrorContraseña.BackColor = Color.FromArgb(0, 0, 64);
+            LblErrorContraseña.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblErrorContraseña.ForeColor = Color.Red;
+            LblErrorContraseña.Location = new Point(185, 132);
+            LblErrorContraseña.Name = "LblErrorContraseña";
+            LblErrorContraseña.Size = new Size(0, 20);
+            LblErrorContraseña.TabIndex = 12;
+            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(470, 371);
+            Controls.Add(LblErrorContraseña);
+            Controls.Add(LblErrorNombre);
+            Controls.Add(lblErrorCuenta);
             Controls.Add(label4);
             Controls.Add(LlblRegistar);
             Controls.Add(label3);
@@ -150,5 +189,8 @@
         private Label label3;
         private LinkLabel LlblRegistar;
         private Label label4;
+        private Label lblErrorCuenta;
+        private Label LblErrorNombre;
+        private Label LblErrorContraseña;
     }
 }
