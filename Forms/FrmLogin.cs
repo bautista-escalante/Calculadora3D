@@ -38,7 +38,6 @@ namespace Forms
             FrmRegistrate frm = new FrmRegistrate();
             frm.Show();
             this.Hide();
-
         }
         public bool Verificar()
         {
@@ -69,7 +68,7 @@ namespace Forms
         }
         public List<Usuario> Deserializar()
         {
-            List<Usuario> usuarios = null;
+            List<Usuario>? usuarios;
             string jsonText = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\usuarios.json");
             usuarios = JsonConvert.DeserializeObject<List<Usuario>>(jsonText);
             return usuarios;

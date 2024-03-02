@@ -176,6 +176,7 @@
             Controls.Add(btningresar);
             Name = "FrmLogin";
             Text = "ingresa";
+           // Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

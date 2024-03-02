@@ -45,6 +45,10 @@
             CbCaptcha = new CheckBox();
             label5 = new Label();
             LblErrorCaptcha = new Label();
+            txtRespuestaCaptcha = new TextBox();
+            LblCaptcha = new Label();
+            BtnGenerarCodigo = new Button();
+            BtnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -155,15 +159,16 @@
             // 
             TxtConsumo.Location = new Point(184, 192);
             TxtConsumo.Name = "TxtConsumo";
+            TxtConsumo.PlaceholderText = "ej: 350";
             TxtConsumo.Size = new Size(236, 23);
             TxtConsumo.TabIndex = 11;
             // 
             // BtnRegistrar
             // 
             BtnRegistrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnRegistrar.Location = new Point(55, 356);
+            BtnRegistrar.Location = new Point(55, 421);
             BtnRegistrar.Name = "BtnRegistrar";
-            BtnRegistrar.Size = new Size(365, 36);
+            BtnRegistrar.Size = new Size(202, 36);
             BtnRegistrar.TabIndex = 16;
             BtnRegistrar.Text = "crear perfil";
             BtnRegistrar.UseVisualStyleBackColor = true;
@@ -172,7 +177,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(55, 276);
+            pictureBox1.Location = new Point(184, 247);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(46, 46);
             pictureBox1.TabIndex = 17;
@@ -184,13 +189,12 @@
             CbCaptcha.Cursor = Cursors.AppStarting;
             CbCaptcha.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CbCaptcha.ForeColor = Color.White;
-            CbCaptcha.Location = new Point(127, 289);
+            CbCaptcha.Location = new Point(254, 269);
             CbCaptcha.Name = "CbCaptcha";
             CbCaptcha.Size = new Size(139, 24);
             CbCaptcha.TabIndex = 18;
             CbCaptcha.Text = "no soy un robot";
             CbCaptcha.UseVisualStyleBackColor = true;
-            CbCaptcha.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // label5
             // 
@@ -208,19 +212,61 @@
             LblErrorCaptcha.AutoSize = true;
             LblErrorCaptcha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LblErrorCaptcha.ForeColor = Color.Red;
-            LblErrorCaptcha.Location = new Point(127, 276);
+            LblErrorCaptcha.Location = new Point(254, 249);
             LblErrorCaptcha.Name = "LblErrorCaptcha";
             LblErrorCaptcha.Size = new Size(131, 17);
             LblErrorCaptcha.TabIndex = 20;
             LblErrorCaptcha.Text = "Captcha no resuelto";
             LblErrorCaptcha.Visible = false;
             // 
+            // txtRespuestaCaptcha
+            // 
+            txtRespuestaCaptcha.Location = new Point(184, 359);
+            txtRespuestaCaptcha.Name = "txtRespuestaCaptcha";
+            txtRespuestaCaptcha.Size = new Size(236, 23);
+            txtRespuestaCaptcha.TabIndex = 21;
+            // 
+            // LblCaptcha
+            // 
+            LblCaptcha.AutoSize = true;
+            LblCaptcha.Font = new Font("Anurati", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblCaptcha.ForeColor = SystemColors.ButtonFace;
+            LblCaptcha.Location = new Point(184, 318);
+            LblCaptcha.Name = "LblCaptcha";
+            LblCaptcha.Size = new Size(0, 18);
+            LblCaptcha.TabIndex = 22;
+            // 
+            // BtnGenerarCodigo
+            // 
+            BtnGenerarCodigo.Location = new Point(55, 278);
+            BtnGenerarCodigo.Name = "BtnGenerarCodigo";
+            BtnGenerarCodigo.Size = new Size(86, 48);
+            BtnGenerarCodigo.TabIndex = 23;
+            BtnGenerarCodigo.Text = "Generar otro codigo";
+            BtnGenerarCodigo.UseVisualStyleBackColor = true;
+            BtnGenerarCodigo.Click += BtnGenerarCodigo_Click;
+            // 
+            // BtnCancelar
+            // 
+            BtnCancelar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnCancelar.Location = new Point(276, 421);
+            BtnCancelar.Name = "BtnCancelar";
+            BtnCancelar.Size = new Size(202, 36);
+            BtnCancelar.TabIndex = 24;
+            BtnCancelar.Text = "cancelar";
+            BtnCancelar.UseVisualStyleBackColor = true;
+            BtnCancelar.Click += BtnCancelar_Click;
+            // 
             // FrmRegistrate
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
-            ClientSize = new Size(499, 430);
+            ClientSize = new Size(499, 469);
+            Controls.Add(BtnCancelar);
+            Controls.Add(BtnGenerarCodigo);
+            Controls.Add(LblCaptcha);
+            Controls.Add(txtRespuestaCaptcha);
             Controls.Add(LblErrorCaptcha);
             Controls.Add(label5);
             Controls.Add(CbCaptcha);
@@ -239,6 +285,7 @@
             Controls.Add(label2);
             Name = "FrmRegistrate";
             Text = "Registrate";
+            Load += FrmRegistrate_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -262,5 +309,9 @@
         private CheckBox CbCaptcha;
         private Label label5;
         private Label LblErrorCaptcha;
+        private TextBox txtRespuestaCaptcha;
+        private Label LblCaptcha;
+        private Button BtnGenerarCodigo;
+        private Button BtnCancelar;
     }
 }
