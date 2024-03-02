@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "r5BQhcSXu6kakdeLRJs2++r47x5FVvkyWeMvU5Nuq8f64r/HnsssmkB7wWTt0Ybhid9Dq6SqX9AgHYq5ZSUoxA==",
+  "success": true,
+  "projectFilePath": "C:\\Calculadora3D\\Forms\\Forms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\B4U71S74\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

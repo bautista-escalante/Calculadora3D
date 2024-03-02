@@ -1,0 +1,12 @@
+C:\Calculadora3D\Exepciones\bin\Debug\net8.0\Exepciones.deps.json
+C:\Calculadora3D\Exepciones\bin\Debug\net8.0\Exepciones.dll
+C:\Calculadora3D\Exepciones\bin\Debug\net8.0\Exepciones.pdb
+C:\Calculadora3D\Exepciones\obj\Debug\net8.0\Exepciones.GeneratedMSBuildEditorConfig.editorconfig
+C:\Calculadora3D\Exepciones\obj\Debug\net8.0\Exepciones.AssemblyInfoInputs.cache
+C:\Calculadora3D\Exepciones\obj\Debug\net8.0\Exepciones.AssemblyInfo.cs
+C:\Calculadora3D\Exepciones\obj\Debug\net8.0\Exepciones.csproj.CoreCompileInputs.cache
+C:\Calculadora3D\Exepciones\obj\Debug\net8.0\Exepciones.sourcelink.json
+C:\Calculadora3D\Exepciones\obj\Debug\net8.0\Exepciones.dll
+C:\Calculadora3D\Exepciones\obj\Debug\net8.0\refint\Exepciones.dll
+C:\Calculadora3D\Exepciones\obj\Debug\net8.0\Exepciones.pdb
+C:\Calculadora3D\Exepciones\obj\Debug\net8.0\ref\Exepciones.dll
