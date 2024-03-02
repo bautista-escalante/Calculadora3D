@@ -1,7 +1,1 @@
-[
-  {
-    "nombre": "pepe",
-    "contraseña": "12345678",
-    "consumo": 350
-  }
-]
+{"consumo":300,"nombre":"ENDER","contraseña":"3456"}
