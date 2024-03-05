@@ -14,9 +14,8 @@ namespace Forms
         public FrmRegistrate()
         {
             InitializeComponent();
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.ControlBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
@@ -33,9 +32,8 @@ namespace Forms
                     listaUsuarios.Add(nuevo);
                     string json = JsonConvert.SerializeObject(listaUsuarios);
                     File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\usuarios.json", json);
-                    // form principal
-                    Application.Exit();
-                    FrmLogin frm = new FrmLogin();
+                    FrmPrincipal frm = new FrmPrincipal();
+                    this.Hide();
                     frm.ShowDialog();
                 }
             }
@@ -72,7 +70,7 @@ namespace Forms
                 LblErrorCaptcha.Visible = true;
                 CbCaptcha.Checked = false;
             }
-            catch (ImpresoraInexistenteExeption ex)
+            catch (comboBoxInexistenteExeption ex)
             {
                 ErrorImpresora.Text = ex.Message;
                 ErrorImpresora.Visible = true;
@@ -121,7 +119,7 @@ namespace Forms
                 }
                 else if (VerificarImpresora(CbImpresora.Text) == false)
                 {
-                    throw new ImpresoraInexistenteExeption();
+                    throw new comboBoxInexistenteExeption("impresora");
                 }
                 else if (CbCaptcha.Checked)
                 {

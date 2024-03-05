@@ -9,6 +9,8 @@ namespace Forms
         public FrmLogin()
         {
             InitializeComponent();
+            this.ControlBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void btningresar_Click(object sender, EventArgs e)
         {
@@ -16,12 +18,14 @@ namespace Forms
             {
                 if (this.Verificar())
                 {
-                    // entro en la app
+                    FrmPrincipal frm = new FrmPrincipal();
+                    this.Hide();
+                    frm.ShowDialog();
                 }
             }
             catch (IngresoIncorrectoExeption ex)
             {
-               LblErrorContraseña.Text = ex.Message;
+                LblErrorContraseña.Text = ex.Message;
             }
             catch (CuentaExistenteExeption ex)
             {
@@ -59,12 +63,16 @@ namespace Forms
                 {
                     throw new IngresoIncorrectoExeption("usuario");
                 }
-                else if (dato.contraseña != contraseña && dato.nombre != nombre)
-                {
-                    throw new CuentaExistenteExeption(nombre, existe: false);
-                }
+                //else if (dato.contraseña != contraseña && dato.nombre != nombre)
+                //{
+                //    throw new CuentaExistenteExeption(nombre, existe: false);
+                //}
             }
             return retorno;
+        }
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
         public List<Usuario> Deserializar()
         {

@@ -1,9 +1,1 @@
-[
-  {
-    "impresora": "Artillery Sidewinder X2",
-    "nombre": "pepe",
-    "contraseña": "123",
-    "consumo": 600
-  }
-
-]
+[{"impresora":"Artillery Sidewinder X2","nombre":"pepe","contraseña":"123","consumo":600},{"impresora":"Artillery Genius PRO","nombre":"bauti","contraseña":"123","consumo":600},{"impresora":"Artillery Genius PRO","nombre":"bautista","contraseña":"1234","consumo":600}]

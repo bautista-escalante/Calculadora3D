@@ -39,13 +39,14 @@
             lblErrorCuenta = new Label();
             LblErrorNombre = new Label();
             LblErrorContraseña = new Label();
+            BtnSalir = new Button();
             SuspendLayout();
             // 
             // btningresar
             // 
-            btningresar.Location = new Point(80, 236);
+            btningresar.Location = new Point(80, 233);
             btningresar.Name = "btningresar";
-            btningresar.Size = new Size(292, 43);
+            btningresar.Size = new Size(292, 31);
             btningresar.TabIndex = 1;
             btningresar.Text = "ingresar";
             btningresar.UseVisualStyleBackColor = true;
@@ -104,7 +105,7 @@
             LlblRegistar.ActiveLinkColor = Color.FromArgb(64, 0, 64);
             LlblRegistar.AutoSize = true;
             LlblRegistar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LlblRegistar.Location = new Point(237, 314);
+            LlblRegistar.Location = new Point(232, 317);
             LlblRegistar.Name = "LlblRegistar";
             LlblRegistar.Size = new Size(101, 20);
             LlblRegistar.TabIndex = 8;
@@ -118,7 +119,7 @@
             label4.BackColor = Color.FromArgb(0, 0, 64);
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(80, 314);
+            label4.Location = new Point(80, 317);
             label4.Name = "label4";
             label4.Size = new Size(157, 20);
             label4.TabIndex = 9;
@@ -157,12 +158,23 @@
             LblErrorContraseña.Size = new Size(0, 20);
             LblErrorContraseña.TabIndex = 12;
             // 
+            // BtnSalir
+            // 
+            BtnSalir.Location = new Point(80, 283);
+            BtnSalir.Name = "BtnSalir";
+            BtnSalir.Size = new Size(292, 31);
+            BtnSalir.TabIndex = 13;
+            BtnSalir.Text = "Cerrar";
+            BtnSalir.UseVisualStyleBackColor = true;
+            BtnSalir.Click += BtnSalir_Click;
+            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(470, 371);
+            Controls.Add(BtnSalir);
             Controls.Add(LblErrorContraseña);
             Controls.Add(LblErrorNombre);
             Controls.Add(lblErrorCuenta);
@@ -176,7 +188,6 @@
             Controls.Add(btningresar);
             Name = "FrmLogin";
             Text = "ingresa";
-           // Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,5 +204,6 @@
         private Label lblErrorCuenta;
         private Label LblErrorNombre;
         private Label LblErrorContraseña;
+        private Button BtnSalir;
     }
 }

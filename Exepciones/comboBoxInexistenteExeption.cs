@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Exepciones
 {
-    public class ImpresoraInexistenteExeption : Exception
+    public class comboBoxInexistenteExeption : Exception
     {
-        public ImpresoraInexistenteExeption() : base("impresora no encontrada")
+        public comboBoxInexistenteExeption(string elemento) : base($"{elemento} no encontrada")
         {
 
         }

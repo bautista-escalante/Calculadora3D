@@ -24,3 +24,4 @@ C:\Calculadora3D\Forms\bin\Debug\net8.0-windows\Objetos.dll
 C:\Calculadora3D\Forms\bin\Debug\net8.0-windows\Exepciones.pdb
 C:\Calculadora3D\Forms\bin\Debug\net8.0-windows\Objetos.pdb
 C:\Calculadora3D\Forms\obj\Debug\net8.0-windows\Forms.csproj.Up2Date
+C:\Calculadora3D\Forms\obj\Debug\net8.0-windows\Forms.FrmPrincipal.resources
