@@ -35,20 +35,19 @@
             label1 = new Label();
             LblErrorContraseña = new Label();
             ErrorNombre = new Label();
-            ErrorConsumo = new Label();
+            ErrorImpresora = new Label();
             TxtNombre = new TextBox();
             TxtContraseña = new TextBox();
             TxtRepetir = new TextBox();
-            TxtConsumo = new TextBox();
             BtnRegistrar = new Button();
             pictureBox1 = new PictureBox();
             CbCaptcha = new CheckBox();
-            label5 = new Label();
             LblErrorCaptcha = new Label();
             txtRespuestaCaptcha = new TextBox();
             LblCaptcha = new Label();
             BtnGenerarCodigo = new Button();
             BtnCancelar = new Button();
+            CbImpresora = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -81,9 +80,9 @@
             label4.ForeColor = SystemColors.ButtonFace;
             label4.Location = new Point(55, 191);
             label4.Name = "label4";
-            label4.Size = new Size(73, 40);
+            label4.Size = new Size(81, 20);
             label4.TabIndex = 3;
-            label4.Text = "consumo\r\nelectrico";
+            label4.Text = "Impresora";
             // 
             // label1
             // 
@@ -120,17 +119,17 @@
             ErrorNombre.Text = "Error. ese nombre ya esta en uso";
             ErrorNombre.Visible = false;
             // 
-            // ErrorConsumo
+            // ErrorImpresora
             // 
-            ErrorConsumo.AutoSize = true;
-            ErrorConsumo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ErrorConsumo.ForeColor = Color.Red;
-            ErrorConsumo.Location = new Point(184, 169);
-            ErrorConsumo.Name = "ErrorConsumo";
-            ErrorConsumo.Size = new Size(258, 17);
-            ErrorConsumo.TabIndex = 7;
-            ErrorConsumo.Text = "el consumo debe ser expresado en watts";
-            ErrorConsumo.Visible = false;
+            ErrorImpresora.AutoSize = true;
+            ErrorImpresora.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ErrorImpresora.ForeColor = Color.Red;
+            ErrorImpresora.Location = new Point(184, 169);
+            ErrorImpresora.Name = "ErrorImpresora";
+            ErrorImpresora.Size = new Size(163, 17);
+            ErrorImpresora.TabIndex = 7;
+            ErrorImpresora.Text = "impresora no encontrada";
+            ErrorImpresora.Visible = false;
             // 
             // TxtNombre
             // 
@@ -154,14 +153,6 @@
             TxtRepetir.PasswordChar = '*';
             TxtRepetir.Size = new Size(236, 23);
             TxtRepetir.TabIndex = 10;
-            // 
-            // TxtConsumo
-            // 
-            TxtConsumo.Location = new Point(184, 192);
-            TxtConsumo.Name = "TxtConsumo";
-            TxtConsumo.PlaceholderText = "ej: 350";
-            TxtConsumo.Size = new Size(236, 23);
-            TxtConsumo.TabIndex = 11;
             // 
             // BtnRegistrar
             // 
@@ -196,17 +187,6 @@
             CbCaptcha.Text = "no soy un robot";
             CbCaptcha.UseVisualStyleBackColor = true;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ButtonFace;
-            label5.Location = new Point(426, 195);
-            label5.Name = "label5";
-            label5.Size = new Size(24, 20);
-            label5.TabIndex = 19;
-            label5.Text = "W";
-            // 
             // LblErrorCaptcha
             // 
             LblErrorCaptcha.AutoSize = true;
@@ -238,7 +218,7 @@
             // 
             // BtnGenerarCodigo
             // 
-            BtnGenerarCodigo.Location = new Point(55, 278);
+            BtnGenerarCodigo.Location = new Point(55, 304);
             BtnGenerarCodigo.Name = "BtnGenerarCodigo";
             BtnGenerarCodigo.Size = new Size(86, 48);
             BtnGenerarCodigo.TabIndex = 23;
@@ -257,26 +237,34 @@
             BtnCancelar.UseVisualStyleBackColor = true;
             BtnCancelar.Click += BtnCancelar_Click;
             // 
+            // CbImpresora
+            // 
+            CbImpresora.FormattingEnabled = true;
+            CbImpresora.Items.AddRange(new object[] { "Artillery hornet", "Artillery Sidewinder X2", "Artillery Genius PRO", "Creality CR-10 Smart", "Creality Ender 3 S1", "Creality Ender 3 V2", "Hellbot Magna SE" });
+            CbImpresora.Location = new Point(184, 189);
+            CbImpresora.Name = "CbImpresora";
+            CbImpresora.Size = new Size(236, 23);
+            CbImpresora.TabIndex = 25;
+            // 
             // FrmRegistrate
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(499, 469);
+            Controls.Add(CbImpresora);
             Controls.Add(BtnCancelar);
             Controls.Add(BtnGenerarCodigo);
             Controls.Add(LblCaptcha);
             Controls.Add(txtRespuestaCaptcha);
             Controls.Add(LblErrorCaptcha);
-            Controls.Add(label5);
             Controls.Add(CbCaptcha);
             Controls.Add(pictureBox1);
             Controls.Add(BtnRegistrar);
-            Controls.Add(TxtConsumo);
             Controls.Add(TxtRepetir);
             Controls.Add(TxtContraseña);
             Controls.Add(TxtNombre);
-            Controls.Add(ErrorConsumo);
+            Controls.Add(ErrorImpresora);
             Controls.Add(ErrorNombre);
             Controls.Add(LblErrorContraseña);
             Controls.Add(label1);
@@ -299,19 +287,18 @@
         private Label label1;
         private Label LblErrorContraseña;
         private Label ErrorNombre;
-        private Label ErrorConsumo;
+        private Label ErrorImpresora;
         private TextBox TxtNombre;
         private TextBox TxtContraseña;
         private TextBox TxtRepetir;
-        private TextBox TxtConsumo;
         private Button BtnRegistrar;
         private PictureBox pictureBox1;
         private CheckBox CbCaptcha;
-        private Label label5;
         private Label LblErrorCaptcha;
         private TextBox txtRespuestaCaptcha;
         private Label LblCaptcha;
         private Button BtnGenerarCodigo;
         private Button BtnCancelar;
+        private ComboBox CbImpresora;
     }
 }

@@ -1,1 +1,9 @@
-{"consumo":300,"nombre":"ENDER","contraseña":"3456"}
+[
+  {
+    "impresora": "Artillery Sidewinder X2",
+    "nombre": "pepe",
+    "contraseña": "123",
+    "consumo": 600
+  }
+
+]

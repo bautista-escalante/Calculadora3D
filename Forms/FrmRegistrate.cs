@@ -27,21 +27,16 @@ namespace Forms
             {
                 if (this.Verificar() && this.VerificarCaptcha())
                 {
-                    int consumo;
-                    if (int.TryParse(TxtConsumo.Text, out consumo))
-                    {
-                        Usuario nuevo = new Usuario(consumo,this.nombre,this.contraseña);
-                        string json = JsonConvert.SerializeObject(nuevo);
-                        File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\usuarios.json", json);
-                        // form principal
-                        Application.Exit();
-                        FrmLogin frm = new FrmLogin();
-                        frm.ShowDialog();
-                    }
-                    else
-                    {
-                        throw new FormatException();
-                    }
+                    string impresora = CbImpresora.Text;
+                    List<Usuario> listaUsuarios = this.Deserializar();
+                    Usuario nuevo = new Usuario(impresora, this.nombre,this.contraseña,this.CalcularWatts(CbImpresora.Text));
+                    listaUsuarios.Add(nuevo);
+                    string json = JsonConvert.SerializeObject(listaUsuarios);
+                    File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\usuarios.json", json);
+                    // form principal
+                    Application.Exit();
+                    FrmLogin frm = new FrmLogin();
+                    frm.ShowDialog();
                 }
             }
             catch (CampoVacioexeption ex)
@@ -52,9 +47,9 @@ namespace Forms
                         ErrorNombre.Text = ex.Message;
                         ErrorNombre.Visible = true;
                         break;
-                    case "consumo electrico":
-                        ErrorConsumo.Text = ex.Message;
-                        ErrorConsumo.Visible = true;
+                    case "impresora":
+                        ErrorImpresora.Text = ex.Message;
+                        ErrorImpresora.Visible = true;
                         break;
                     case "contraseña":
                         LblErrorContraseña.Text = ex.Message;
@@ -77,9 +72,10 @@ namespace Forms
                 LblErrorCaptcha.Visible = true;
                 CbCaptcha.Checked = false;
             }
-            catch (FormatException)
+            catch (ImpresoraInexistenteExeption ex)
             {
-                ErrorConsumo.Visible = true;
+                ErrorImpresora.Text = ex.Message;
+                ErrorImpresora.Visible = true;
             }
         }
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -115,13 +111,17 @@ namespace Forms
                 {
                     throw new CampoVacioexeption("contraseña");
                 }
-                else if(TxtConsumo.Text == string.Empty)
+                else if(CbImpresora.Text == string.Empty)
                 {
-                    throw new CampoVacioexeption("consumo electrico");
+                    throw new CampoVacioexeption("impresora");
                 }
                 else if(this.nombre == string.Empty)
                 {
                     throw new CampoVacioexeption("nombre");
+                }
+                else if (VerificarImpresora(CbImpresora.Text) == false)
+                {
+                    throw new ImpresoraInexistenteExeption();
                 }
                 else if (CbCaptcha.Checked)
                 {
@@ -149,6 +149,47 @@ namespace Forms
                 retorno = true;
             }
             return retorno;
+        }
+        private bool VerificarImpresora(string impresora)
+        {
+            bool retorno = false;
+            foreach(string i in CbImpresora.Items)
+            {
+                if(i == impresora)
+                {
+                    retorno = true;
+                }
+            }
+            return retorno;
+        }
+        public int CalcularWatts(string impresora)
+        {
+            int watts = 0;
+            switch (impresora)
+            {
+                case "Artillery hornet":
+                    watts = 350; 
+                    break;
+                case "Artillery Sidewinder X2":
+                    watts = 600;
+                    break;
+                case "Artillery Genius PRO":
+                    watts = 600;
+                    break;
+                case "Creality CR-10 Smart":
+                    watts = 360;
+                    break;
+                case "Creality Ender 3 S1":
+                    watts = 350;
+                    break;
+                case "Creality Ender 3 V2":
+                    watts = 350;
+                    break;
+                case "Hellbot Magna SE":
+                    watts = 150;
+                    break;
+            }
+            return watts;
         }
         public List<Usuario> Deserializar()
         {

@@ -2,16 +2,19 @@
 {
     public class Usuario
     {
-        public int consumo;
+        public string impresora;
         public string nombre;
         public string contraseña;
-        
-        public Usuario(int consumo, string nombre, string contraseña)
+        public int consumo;
+
+        public Usuario(string impresora, string nombre, string contraseña,int consumo)
         {
-            this.consumo = consumo;
-            this.nombre = nombre;
             this.contraseña = contraseña;
+            this.nombre = nombre;
+            this.impresora = impresora;
+            this.consumo = consumo;
         }
+
 
     }
 }
