@@ -10,3 +10,4 @@ C:\Calculadora3D\Objetos\obj\Debug\net8.0\Objetos.dll
 C:\Calculadora3D\Objetos\obj\Debug\net8.0\refint\Objetos.dll
 C:\Calculadora3D\Objetos\obj\Debug\net8.0\Objetos.pdb
 C:\Calculadora3D\Objetos\obj\Debug\net8.0\ref\Objetos.dll
+C:\Calculadora3D\Objetos\obj\Debug\net8.0\Objetos.csproj.AssemblyReference.cache

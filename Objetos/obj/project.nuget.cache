@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aitLdOhcTE4TN+O4p9KbuTBGGat2luwDu8rVkj5vcaFcOkU7HXsQSO4D3TAKpBt1Hlm3hlBZHMvS8OR+XDl/xg==",
+  "dgSpecHash": "HW3ndOw/cENpgS4aD1dGZ3cYzbonLqIq1dtN0fAVi3dw7yMnZGITPGpUya5c66FrnZKGUB2NLAgWJu0PS61ThQ==",
   "success": true,
   "projectFilePath": "C:\\Calculadora3D\\Objetos\\Objetos.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\B4U71S74\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

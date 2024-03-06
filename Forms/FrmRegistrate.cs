@@ -11,10 +11,12 @@ namespace Forms
         private string nombre;
         private string contraseña;
         private string repetida;
+        private GuardarDato json;
         public FrmRegistrate()
         {
             InitializeComponent();
             this.ControlBox = false;
+            this.json = new GuardarDato();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void BtnRegistrar_Click(object sender, EventArgs e)
@@ -27,11 +29,10 @@ namespace Forms
                 if (this.Verificar() && this.VerificarCaptcha())
                 {
                     string impresora = CbImpresora.Text;
-                    List<Usuario> listaUsuarios = this.Deserializar();
+                    List<Usuario> listaUsuarios = this.json.Deserializar("\\Usuarios.json");
                     Usuario nuevo = new Usuario(impresora, this.nombre,this.contraseña,this.CalcularWatts(CbImpresora.Text));
                     listaUsuarios.Add(nuevo);
-                    string json = JsonConvert.SerializeObject(listaUsuarios);
-                    File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\usuarios.json", json);
+                    this.json.Serializar("\\Usuarios.json",listaUsuarios);
                     FrmPrincipal frm = new FrmPrincipal();
                     this.Hide();
                     frm.ShowDialog();
@@ -90,7 +91,7 @@ namespace Forms
         public bool Verificar()
         {
             bool retorno = false;
-            List<Usuario> datos = Deserializar();
+            List<Usuario> datos = this.json.Deserializar("\\Usuarion.json");
             foreach (Usuario dato in datos)
             {
                 if (this.nombre == dato.nombre)
@@ -188,14 +189,6 @@ namespace Forms
                     break;
             }
             return watts;
-        }
-        public List<Usuario> Deserializar()
-        {
-            List<Usuario> usuarios = null;
-            string jsonText = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\usuarios.json");
-
-            usuarios = JsonConvert.DeserializeObject<List<Usuario>>(jsonText);
-            return usuarios;
         }
 
         private void FrmRegistrate_Load(object sender, EventArgs e)

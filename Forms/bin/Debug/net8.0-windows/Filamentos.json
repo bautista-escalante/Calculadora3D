@@ -1,0 +1,18 @@
+[
+  {
+    "tipo": "PLA",
+    "precio": 18399
+  },
+  {
+    "tipo": "ABS",
+    "precio": 21615
+  },
+  {
+    "tipo": "ASA",
+    "precio": 65560
+  },
+  {
+    "tipo": "TPU",
+    "precio": 36505
+  }
+]

@@ -44,6 +44,8 @@
             CbTipoFilamento = new ComboBox();
             label9 = new Label();
             LblErrorTipo = new Label();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // btnCalcularCosto
@@ -115,7 +117,7 @@
             label4.Name = "label4";
             label4.Size = new Size(77, 40);
             label4.TabIndex = 8;
-            label4.Text = "gr de \r\nfilamento";
+            label4.Text = "filamento\r\nutilizado";
             // 
             // LblErrorInprevisto
             // 
@@ -215,12 +217,36 @@
             LblErrorTipo.Text = "label10";
             LblErrorTipo.Visible = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(356, 129);
+            label1.Name = "label1";
+            label1.Size = new Size(25, 20);
+            label1.TabIndex = 19;
+            label1.Text = "hs";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(356, 50);
+            label2.Name = "label2";
+            label2.Size = new Size(24, 20);
+            label2.TabIndex = 20;
+            label2.Text = "gr";
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(429, 450);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(LblErrorTipo);
             Controls.Add(label9);
             Controls.Add(CbTipoFilamento);
@@ -261,5 +287,7 @@
         private ComboBox CbTipoFilamento;
         private Label label9;
         private Label LblErrorTipo;
+        private Label label1;
+        private Label label2;
     }
 }
